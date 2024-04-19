@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                     @php
-                        $nextDelivery = $deliveries->where('store_amount', null)->sortBy('datenextdelivery')->first();
+                        $nextDelivery = $deliveries->where('store_amount_available', null)->sortBy('datenextdelivery')->first();
                     @endphp
 
                     @if ($nextDelivery)
@@ -39,7 +39,7 @@
                             <tr>
                                 <td class="border-2 border-gray-400 px-4 py-2">{{ $delivery->product_name }}</td>
                                 <td class="border-2 border-gray-400 px-4 py-2">{{ $delivery->datedelivery }}</td>
-                                <td class="border-2 border-gray-400 px-4 py-2">{{ $delivery->store_amount }}</td>
+                                <td class="border-2 border-gray-400 px-4 py-2">{{ $delivery->store_amount_available }}</td>
                                 <td class="border-2 border-gray-400 px-4 py-2">{{ $delivery->datenextdelivery }}</td>
                             </tr>
                         @endforeach

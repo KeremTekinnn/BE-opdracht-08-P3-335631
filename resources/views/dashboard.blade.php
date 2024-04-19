@@ -12,7 +12,7 @@
                     <th class="border-2 border-gray-400 px-4 py-2">Barcode</th>
                     <th class="border-2 border-gray-400 px-4 py-2">Name</th>
                     <th class="border-2 border-gray-400 px-4 py-2">Unit</th>
-                    <th class="border-2 border-gray-400 px-4 py-2">Amount</th>
+                    <th class="border-2 border-gray-400 px-4 py-2">Amount Available</th>
                     <th class="border-2 border-gray-400 px-4 py-2">Allergy Info</th>
                     <th class="border-2 border-gray-400 px-4 py-2">Delivery Info</th>
 
@@ -24,7 +24,7 @@
                         <td class="border-2 border-gray-400 px-4 py-2">{{ $product->barcode }}</td>
                         <td class="border-2 border-gray-400 px-4 py-2">{{ $product->name }}</td>
                         <td class="border-2 border-gray-400 px-4 py-2">{{ $product->unit }}</td>
-                        <td class="border-2 border-gray-400 px-4 py-2">{{ $product->amount !== null ? $product->amount : '0' }}</td>
+                        <td class="border-2 border-gray-400 px-4 py-2">{{ $product->amount_available !== null ? $product->amount_available : '0' }}</td>
                         <td class="border-2 border-gray-400 px-4 py-2">
                             <div class="flex justify-center">
                                 <a href="{{ route('allergy.index', $product->id) }}" class="text-red-500">

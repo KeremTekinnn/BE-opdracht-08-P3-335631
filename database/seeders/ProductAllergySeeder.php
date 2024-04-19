@@ -13,26 +13,20 @@ class ProductAllergySeeder extends Seeder
      */
     public function run()
     {
-        $products = DB::table('products')->get();
-        $allergies = DB::table('allergies')->get();
-
-        $firstProduct = true;
-
-        foreach ($products as $product) {
-            if ($firstProduct) {
-                // Skip the first product to make it have NULL allergy
-                $firstProduct = false;
-                continue;
-            }
-
-            foreach ($allergies as $allergy) {
-                if (rand(0, 1)) { // Randomly decide if this product has this allergy
-                    DB::table('product_allergies')->insert([
-                        'product_id' => $product->id,
-                        'allergy_id' => $allergy->id,
-                    ]);
-                }
-            }
-        }
+        DB::table('product_allergies')->insert([
+            ['product_id' => 1, 'allergy_id' => 2],
+            ['product_id' => 1, 'allergy_id' => 1],
+            ['product_id' => 1, 'allergy_id' => 3],
+            ['product_id' => 3, 'allergy_id' => 4],
+            ['product_id' => 6, 'allergy_id' => 5],
+            ['product_id' => 9, 'allergy_id' => 2],
+            ['product_id' => 9, 'allergy_id' => 5],
+            ['product_id' => 10, 'allergy_id' => 2],
+            ['product_id' => 12, 'allergy_id' => 4],
+            ['product_id' => 13, 'allergy_id' => 1],
+            ['product_id' => 13, 'allergy_id' => 4],
+            ['product_id' => 13, 'allergy_id' => 5],
+            ['product_id' => 14, 'allergy_id' => 5],
+        ]);
     }
 }

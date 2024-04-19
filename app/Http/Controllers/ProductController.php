@@ -11,7 +11,7 @@ class ProductController extends Controller
     {
         $products = DB::table('products')
         ->join('stores', 'products.id', '=', 'stores.product_id')
-        ->select('products.*', 'stores.unit', 'stores.amount')
+        ->select('products.*', 'stores.unit', 'stores.amount_available')
         ->orderBy('products.barcode', 'asc')
         ->get();
 

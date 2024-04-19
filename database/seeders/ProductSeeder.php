@@ -27,6 +27,7 @@ class ProductSeeder extends Seeder
             ['name' => 'Drop Munten', 'barcode' => '8719587322345'],
             ['name' => 'Kruis Drop', 'barcode' => '8719587322265'],
             ['name' => 'Zoute Ruitjes', 'barcode' => '8719587323256'],
+            ['name' => 'Drop ninjas', 'barcode' => '8719587323277'],
         ];
 
         foreach ($products as $product) {

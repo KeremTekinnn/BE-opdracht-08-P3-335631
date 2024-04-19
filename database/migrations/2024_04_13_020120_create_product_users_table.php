@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('amount');
             $table->date('datedelivery');
-            $table->date('datenextdelivery');
+            $table->date('datenextdelivery')->nullable();
             $table->timestamps();
         });
     }
